@@ -1,0 +1,2 @@
+class KanjiCharactersController < ApplicationController
+end

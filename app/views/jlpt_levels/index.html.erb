@@ -1,0 +1,10 @@
+<section class="home">
+  <% @levels.each do |level| %>
+    <nav class="link-cards">
+      <%= link_to jlpt_level_path(level) do %>
+        <h2>JLPT<%= level %> </h2>
+        <p><%= @kanji_character_counts %></p>
+      <% end %>
+    </nav>
+  <% end %>
+</section>

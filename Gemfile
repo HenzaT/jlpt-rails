@@ -6,7 +6,9 @@ ruby "3.3.5"
 gem "rails", "~> 7.1.6"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# gem "sprockets-rails"
+
+gem "propshaft"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -24,7 +26,6 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Use Dart SASS [https://github.com/rails/dartsass-rails]
-gem "dartsass-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -76,3 +77,5 @@ gem 'jsonapi-serializer'
 gem "devise"
 gem 'valid_email2'
 gem "minitest", "5.25.1"
+
+gem "cssbundling-rails", "~> 1.4"
