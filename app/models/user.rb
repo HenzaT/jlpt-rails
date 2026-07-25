@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   validates :firstname, :email, :password, presence: true
   validates :firstname, length: { minimum: 2 }
-  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, uniqueness: true
+  validates :email, 'valid_email_2/email': true
   validates :password, length: { minimum: 12 }
   validates :password, not_pwned: { on_error: :valid }
   validate :password_complexity

@@ -74,3 +74,5 @@ gem 'rack-cors'
 gem 'pwned'
 gem 'jsonapi-serializer'
 gem "devise"
+gem 'valid_email2'
+gem "minitest", "5.25.1"
