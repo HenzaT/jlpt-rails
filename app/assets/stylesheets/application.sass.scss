@@ -1,21 +1,6 @@
 // Entry point for your Sass build
-@use 'variables.scss' as vars;
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Figtree", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-html {
-  background: vars.$white;
-}
-
-a {
-  text-decoration: none;
-  background: transparent;
-  color: vars.$black;
-}
+@use '../stylesheets/base/base.scss';
+@use '../stylesheets/components/button.scss';
+@use '../stylesheets/components/card.scss';
+@use '../stylesheets/components/nav.scss';
+@use '../stylesheets/pages/home.scss';

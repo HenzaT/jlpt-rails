@@ -1,10 +1,14 @@
 <section class="home">
-  <% @levels.each do |level| %>
-    <nav class="link-cards">
+  <h1>Choose your JLPT level</h1>
+  <nav class="link-cards">
+    <% @levels.each do |level| %>
       <%= link_to jlpt_level_path(level) do %>
-        <h2>JLPT<%= level %> </h2>
-        <p><%= @kanji_character_counts %></p>
+        <article class="card">
+          <h2>JLPT N<%= level %> </h2>
+          <h3><%= @kanji_character_counts[level] %> kanji</h3>
+        </article>
       <% end %>
-    </nav>
-  <% end %>
+    <% end %>
+  </nav>
+  <%= link_to "Kanji of the day", kanji_character_path(5), class: "link-button" %>
 </section>

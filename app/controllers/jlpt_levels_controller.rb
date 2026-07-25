@@ -1,6 +1,6 @@
 class JlptLevelsController < ApplicationController
   def index
-    @levels = %i[1 2 3 4 5]
+    @levels = [5, 4, 3, 2, 1]
     @kanji_character_counts = KanjiCharacter.group(:jlpt).count
   end
 

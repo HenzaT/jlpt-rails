@@ -1,0 +1,37 @@
+@use '../abstracts/variables.scss' as vars;
+@use '../abstracts/mixins.scss' as mixin;
+
+.link-cards {
+  @include mixin.flex-col;
+  gap: 2rem;
+
+  .card {
+    &:hover {
+      background: vars.$light-purple;
+      border: 2px solid vars.$dark-purple;
+    }
+  }
+}
+
+.card {
+  @include mixin.flex-col;
+  gap: 1rem;
+  align-items: normal;
+  background: vars.$card-light;
+  width: 100%;
+  padding: 2rem 1rem;
+  border: 2px solid vars.$card-light;
+  border-radius: 10px;
+  transition: all 0.15s ease-in-out;
+
+  h3 {
+    color: vars.$purple;
+  }
+}
+
+@media (min-width: 768px) {
+  .link-cards {
+    @include mixin.flex-row;
+    justify-content: space-around;
+  }
+}

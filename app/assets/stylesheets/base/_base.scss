@@ -1,0 +1,25 @@
+@use '../abstracts/variables.scss' as vars;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  background: vars.$white;
+}
+
+body {
+  padding: 3rem;
+}
+
+a {
+  text-decoration: none;
+  background: transparent;
+  color: vars.$black;
+}
