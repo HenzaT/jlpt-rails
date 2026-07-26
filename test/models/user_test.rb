@@ -11,6 +11,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.save, 'User saved with firstname that is too short'
   end
 
+  test 'should not save User if duplicate email' do
+    existing = users(:one)
+    duplicate = User.new(firstname: 'Jane', email: existing.email, password: 'SeveranceGrowthYearning85')
+    assert_not duplicate.save, 'User saved with duplicate email'
+  end
+
   test 'should not save User if email is not a valid format' do
     email_formats = %w[h1 h1@ h1@example h1@example.]
 

@@ -13,3 +13,13 @@ two:
   jlpt: 4
   kanji: 二
   skipped: false
+
+three:
+  jlpt: 3
+  kanji: 三
+  skipped: false
+
+four:
+  jlpt: 4
+  kanji: 四
+  skipped: false

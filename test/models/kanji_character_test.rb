@@ -15,4 +15,10 @@ class KanjiCharacterTest < ActiveSupport::TestCase
     kanji = KanjiCharacter.new(jlpt: 1, kanji: '一', skipped: nil)
     assert_not kanji.save, 'Kanji saved with invalid skipped value'
   end
+
+  test 'should not save Kanji Character if kanji is duplicate' do
+    existing = kanji_characters(:one)
+    duplicate = KanjiCharacter.new(jlpt: 5, kanji: existing.kanji, skipped: false)
+    assert_not duplicate.save, 'Kanji saved with duplicate kanji value'
+  end
 end
