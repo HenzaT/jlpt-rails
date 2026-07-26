@@ -2,5 +2,8 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 section.home {
-  padding: 3rem 0 ;
+  padding: 3rem 0;
+  @include mixin.flex-col;
+  align-items: normal;
+  gap: 2rem;
 }

@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   root to: 'jlpt_levels#index'
   resources :jlpt_levels, only: %i[index show], param: :level
   resources :kanji_characters, only: %i[index show]
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 end

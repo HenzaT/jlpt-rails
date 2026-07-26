@@ -2,8 +2,23 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 .link-button {
-  background: vars.$dark-purple;
-  color: vars.$white;
+  background: vars.$gold;
+  color: vars.$black;
   padding: 1rem;
-  border-radius: 10px;
+  border: 2px solid vars.$gold;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: vars.$transition;
+
+  &:hover {
+    border: 2px solid vars.$dark-gold;
+    background: vars.$light-gold;
+  }
+}
+
+@media (min-width: 768px) {
+  .link-button {
+    align-self: flex-start;
+  }
 }

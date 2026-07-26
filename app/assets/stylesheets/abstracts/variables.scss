@@ -1,9 +1,16 @@
 // colors
 $white:        #f2dbff; // body background
 $card-light:   #c98bff; // card background
+
 $black:        #0a0012; // primary text
 $purple:       #663c84; // secondary text & links, buttons
+
 $light-purple: #e9c9ff; // text on dark background
 $dark-purple:  #27083e; // hover
-$gold:         #f4b942; // accent
+
+$gold:         #f4b942; // accent, some buttons
+$dark-gold:    #513807; // hover
+$light-gold:   #fce3b1;
+
 $shadow:       0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+$transition:   all 0.15s ease-in-out;

@@ -3,7 +3,11 @@
 
 .link-cards {
   @include mixin.flex-col;
-  gap: 2rem;
+  gap: 1rem;
+
+  a {
+    width: 100%;
+  }
 
   .card {
     &:hover {
@@ -18,20 +22,29 @@
   gap: 1rem;
   align-items: normal;
   background: vars.$card-light;
-  width: 100%;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   border: 2px solid vars.$card-light;
-  border-radius: 10px;
-  transition: all 0.15s ease-in-out;
+  border-radius: 15px;
+  transition: vars.$transition;
 
   h3 {
     color: vars.$purple;
   }
 }
 
+.to-jlpt {
+  @include mixin.flex-row;
+  justify-content: space-between;
+}
+
 @media (min-width: 768px) {
   .link-cards {
     @include mixin.flex-row;
     justify-content: space-around;
+  }
+
+  .to-jlpt {
+    @include mixin.flex-col;
+    align-items: normal;
   }
 }
