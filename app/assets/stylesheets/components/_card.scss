@@ -5,11 +5,9 @@
   @include mixin.flex-col;
   gap: 1rem;
 
-  a {
-    width: 100%;
-  }
+  a { width: 100%; }
 
-  .card {
+  article.card {
     &:hover {
       background: vars.$light-purple;
       border: 2px solid vars.$dark-purple;
@@ -17,24 +15,41 @@
   }
 }
 
-.card {
+article.card {
   @include mixin.flex-col;
   gap: 1rem;
   align-items: normal;
   background: vars.$card-light;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem;
   border: 2px solid vars.$card-light;
   border-radius: 15px;
   transition: vars.$transition;
 
-  h3 {
-    color: vars.$purple;
-  }
+  h3 { color: vars.$purple; }
 }
 
-.to-jlpt {
+article.to-jlpt {
   @include mixin.flex-row;
   justify-content: space-between;
+}
+
+article.card.kanji {
+  .card-top {
+    @include mixin.flex-row;
+    justify-content: space-between;
+
+    .pill.dark { align-self: flex-start; }
+  }
+
+  .meanings {
+    @include mixin.flex-row;
+    gap: 2rem;
+  }
+
+  h1 { font-size: 6rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  p  { font-size: 1.3rem; }
 }
 
 @media (min-width: 768px) {
@@ -43,7 +58,7 @@
     justify-content: space-around;
   }
 
-  .to-jlpt {
+  article.to-jlpt {
     @include mixin.flex-col;
     align-items: normal;
   }

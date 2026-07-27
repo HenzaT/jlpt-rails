@@ -23,3 +23,10 @@ a {
   background: transparent;
   color: vars.$black;
 }
+
+hr.card-separator {
+  height: 1px;
+  width: 100%;
+  border: none;
+  background: vars.$white;
+}

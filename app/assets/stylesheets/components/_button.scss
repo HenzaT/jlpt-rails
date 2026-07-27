@@ -1,14 +1,31 @@
 @use '../abstracts/variables.scss' as vars;
 @use '../abstracts/mixins.scss' as mixin;
 
-.link-button {
+button { cursor: pointer; }
+
+.gold-button {
   background: vars.$gold;
   color: vars.$black;
   padding: 1rem;
   border: 2px solid vars.$gold;
   border-radius: 15px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   text-align: center;
+  transition: vars.$transition;
+
+  &:hover {
+    border: 2px solid vars.$dark-gold;
+    background: vars.$light-gold;
+  }
+}
+
+button.pill {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  background: vars.$gold;
+  color: vars.$black;
+  border: 2px solid vars.$gold;
+  border-radius: 15px;
   transition: vars.$transition;
 
   &:hover {
