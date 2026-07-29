@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-services:
+    services:
       postgres:
         image: postgres:16
         env:
@@ -27,7 +27,6 @@ services:
       RAILS_ENV: test
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/jlpt_rails_test
 
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -35,13 +34,11 @@ services:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.5'   # reads your project's .ruby-version file
-          bundler-cache: true             # runs bundle install and caches gems
+          ruby-version: '3.3.5'
+          bundler-cache: true
 
       - name: Set up database
-        run: |
-          bin/rails db:create
-          bin/rails db:schema:load
+        run: bin/rails db:schema:load
 
       - name: Run Tests
         run: bin/rails test
