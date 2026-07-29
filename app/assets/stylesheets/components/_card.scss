@@ -43,13 +43,20 @@ article.card.kanji {
 
   .meanings {
     @include mixin.flex-row;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   h1 { font-size: 6rem; }
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
   p  { font-size: 1.3rem; }
+}
+
+article.card.light {
+  background: vars.$light-purple;
+  display: none;
+
+  h3 { font-size: 1.5rem; }
 }
 
 @media (min-width: 768px) {

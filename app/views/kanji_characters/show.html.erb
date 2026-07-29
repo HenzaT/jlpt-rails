@@ -1,24 +1,26 @@
-<section class="random-kanji">
+<section class="random-kanji" data-controller="show">
   <article class="card kanji">
     <div class="card-top">
       <h1><%= @random_kanji.kanji %></h1>
       <span class="pill dark">N<%= @random_kanji.jlpt %></span>
     </div>
     <h2><%= @random_kanji.heisig_en %></h2>
-    <% if @random_kanji.meanings.size >= 1 %>
+    <% if @random_kanji.meanings.any? %>
       <div class="meanings">
         <div class="meaning-words">
-          <% @random_kanji.meanings.first(2).each do |meaning| %>
-            <% if meaning != @random_kanji.heisig_en %>
-                <h3><%= meaning %></h3>
-            <% end %>
+          <% @random_kanji.show_two_meanings.each do |meaning| %>
+            <h3><%= meaning %></h3>
           <% end %>
         </div>
-        <button type="button" class="pill gold">+<%= @random_kanji.meanings.size %> more</button>
+        <% if @random_kanji.show_rest_meanings.any? %>
+          <button type="button" class="pill gold" data-show-target="meaningsButton" data-action="click->show#showMoreMeanings">
+            +<%= @random_kanji.count_of_rest %> more
+          </button>
+        <% end %>
       </div>
     <% end %>
     <hr class="card-separator">
-    <% if @random_kanji.kun_readings.size >= 1 %>
+    <% if @random_kanji.kun_readings.any? %>
       <p>kun readings</p>
       <div class="readings-pills">
         <% @random_kanji.kun_readings.each do |reading| %>
@@ -26,7 +28,7 @@
         <% end %>
       </div>
     <% end %>
-    <% if @random_kanji.on_readings.size >= 1 %>
+    <% if @random_kanji.on_readings.any? %>
       <p>on readings</p>
       <div class="readings-pills">
         <% @random_kanji.on_readings.each do |reading| %>
@@ -34,5 +36,13 @@
         <% end %>
       </div>
     <% end %>
+  </article>
+
+  <article class="card light" data-show-target="meaningsCard">
+    <div class="meaning-words">
+      <% @random_kanji.show_rest_meanings.each do |meaning| %>
+        <h3><%= meaning %></h3>
+      <% end %>
+    </div>
   </article>
 </section>
