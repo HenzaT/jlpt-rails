@@ -1,0 +1,67 @@
+<article class="card kanji">
+  <div class="card-top">
+    <h1><%= kanji.kanji %></h1>
+    <span class="pill dark">N<%= kanji.jlpt %></span>
+  </div>
+  <h2><%= kanji.heisig_en %></h2>
+
+  <% if kanji.meanings.any? %>
+    <div class="meanings">
+      <div class="meaning-words">
+        <% kanji.show_two_meanings.each do |meaning| %>
+          <h3><%= meaning %></h3>
+        <% end %>
+      </div>
+      <% if kanji.show_rest_meanings.any? %>
+        <button type="button" class="pill gold" data-show-target="meaningsButton" data-action="click->show#showMoreMeanings">
+          +<%= kanji.count_of_rest %> more
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+
+  <hr class="card-separator">
+
+  <% if kanji.kun_readings.any? %>
+    <p>kun readings</p>
+    <div class="kun-readings">
+      <div class="readings-pills">
+        <% kanji.show_two_kun_readings.each do |reading| %>
+          <span class="pill light"><%= reading %></span>
+        <% end %>
+      </div>
+      <% if kanji.show_rest_kun_readings.any? %>
+        <button type="button" class="pill gold" data-show-target="kunReadingsButton" data-action="click->show#showMoreReadings">
+          +<%= kanji.count_of_rest_kun_readings %> more
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if kanji.on_readings.any? %>
+    <p>on readings</p>
+    <div class="readings-pills">
+      <% kanji.on_readings.each do |reading| %>
+        <span class="pill light"><%= reading %></span>
+      <% end %>
+    </div>
+  <% end %>
+</article>
+
+<article class="card light" data-show-target="meaningsCard">
+  <h2>More Meanings</h2>
+  <div class="meaning-words">
+    <% kanji.show_rest_meanings.each do |meaning| %>
+      <h3><%= meaning %></h3>
+    <% end %>
+  </div>
+</article>
+
+<article class="card light" data-show-target="kunReadingsCard">
+  <h2>More Kun-Readings</h2>
+  <div class="kun-reading-words">
+    <% kanji.show_rest_kun_readings.each do |reading| %>
+      <h3><%= reading %></h3>
+    <% end %>
+  </div>
+</article>

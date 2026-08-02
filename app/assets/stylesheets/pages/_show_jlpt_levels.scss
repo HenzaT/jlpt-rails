@@ -1,8 +1,8 @@
 @use '../abstracts/variables.scss' as vars;
 @use '../abstracts/mixins.scss' as mixin;
 
-section.show-kanji {
-  @include mixin.flex-col;
-  align-items: normal;
-  gap: 1rem;
+section.jlpt-page {
+  h1 {
+    padding-bottom: 1rem;
+  }
 }

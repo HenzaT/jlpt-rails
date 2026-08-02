@@ -1,13 +1,16 @@
 class KanjiCharactersController < ApplicationController
+  def index
+    #jsdj
+  end
+
+  # show individual kanji or random kanji
   def show
-    all_kanjis = KanjiCharacter.all
     @kanji = KanjiCharacter.find(params[:id])
-    @random_kanji = all_kanjis.sample
   end
 
   private
 
   def kanji_params
-    params.require(:kanji_character).permit(:id)
+    params.require(:kanji_character).permit(:id, :jlpt)
   end
 end

@@ -15,6 +15,12 @@
   }
 }
 
+.cards {
+  @include mixin.flex-row;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 article.card {
   @include mixin.flex-col;
   gap: 1rem;
@@ -41,7 +47,7 @@ article.card.kanji {
     .pill.dark { align-self: flex-start; }
   }
 
-  .meanings {
+  .meanings, .kun-readings {
     @include mixin.flex-row;
     gap: 1rem;
   }
@@ -55,6 +61,11 @@ article.card.kanji {
 article.card.light {
   background: vars.$light-purple;
   display: none;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
 
   h3 { font-size: 1.5rem; }
 }

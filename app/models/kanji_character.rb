@@ -21,4 +21,17 @@ class KanjiCharacter < ApplicationRecord
     left_over = show_rest_meanings
     left_over.count
   end
+
+  def show_two_kun_readings(limit: 2)
+    kun_readings.first(limit)
+  end
+
+  def show_rest_kun_readings
+    kun_readings - show_two_kun_readings
+  end
+
+  def count_of_rest_kun_readings
+    left_over = show_rest_kun_readings
+    left_over.count
+  end
 end

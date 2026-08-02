@@ -1,3 +1,13 @@
+<%# show all kanji in a specific jlpt level %>
 <section class="jlpt-page">
-  <%= @kanji_characters %>
+  <h1><%= @kanji_characters.count %> kanji</h1>
+  <div class="cards">
+    <% @kanji_characters.each do |kanji| %>
+      <%= link_to kanji_character_path(kanji) do %>
+        <article class="card">
+          <h2><%= kanji.kanji %></h2>
+        </article>
+      <% end %>
+    <% end %>
+  </div>
 </section>

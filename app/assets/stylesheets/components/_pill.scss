@@ -2,7 +2,7 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 span.pill {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 0.5rem 1rem;
 }
 
@@ -15,7 +15,7 @@ span.pill.dark {
 .readings-pills {
   @include mixin.flex-row;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 
   span.pill.light {
     background: vars.$light-purple;
