@@ -2,7 +2,14 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 section.jlpt-page {
-  h1 {
+  .top {
+    @include mixin.flex-row;
+    justify-content: space-between;
+    gap: 1rem;
     padding-bottom: 1rem;
+
+    a {
+      @include mixin.flex-row;
+    }
   }
 }

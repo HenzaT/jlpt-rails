@@ -1,0 +1,2 @@
+module LearntKanjisHelper
+end

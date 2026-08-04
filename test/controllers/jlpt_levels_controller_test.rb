@@ -5,4 +5,9 @@ class JlptLevelsControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
   end
+
+  test 'should get show' do
+    get jlpt_level_path(kanji_characters(:one))
+    assert_response :success
+  end
 end

@@ -77,5 +77,6 @@ gem 'jsonapi-serializer'
 gem "devise"
 gem 'valid_email2'
 gem "minitest", "5.25.1"
+gem 'simple_form'
 
 gem "cssbundling-rails", "~> 1.4"

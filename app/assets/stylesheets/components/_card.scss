@@ -1,7 +1,7 @@
 @use '../abstracts/variables.scss' as vars;
 @use '../abstracts/mixins.scss' as mixin;
 
-.link-cards {
+.cards {
   @include mixin.flex-col;
   gap: 1rem;
 
@@ -15,7 +15,7 @@
   }
 }
 
-.cards {
+.cards-wrapped {
   @include mixin.flex-row;
   gap: 1rem;
   flex-wrap: wrap;

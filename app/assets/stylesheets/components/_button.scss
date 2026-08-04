@@ -3,20 +3,40 @@
 
 button { cursor: pointer; }
 
-.gold-button {
-  background: vars.$gold;
-  color: vars.$black;
+.button {
   padding: 1rem;
-  border: 2px solid vars.$gold;
   border-radius: 15px;
   font-size: 1.4rem;
   text-align: center;
   transition: vars.$transition;
+  color: vars.$black;
+
+}
+
+.gold.button {
+  background: vars.$gold;
+  border: 2px solid vars.$gold;
 
   &:hover {
     border: 2px solid vars.$dark-gold;
     background: vars.$light-gold;
   }
+}
+
+.purple.button {
+  background: vars.$purple;
+  border: 2px solid vars.$purple;
+  color: vars.$light-purple;
+
+  &:hover {
+    border: 2px solid vars.$dark-purple;
+    background: vars.$light-purple;
+    color: vars.$dark-purple;
+  }
+}
+
+.disabled.button {
+  background: vars.$light-purple;
 }
 
 button.pill {

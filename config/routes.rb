@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: 'jlpt_levels#index'
   resources :jlpt_levels, only: %i[index show], param: :level
-  resources :kanji_characters, only: %i[index show]
+  resources :kanji_characters, only: %i[index show] do
+    resource :learnt_kanjis, only: %i[create destroy]
+  end
+  resources :learnt_kanjis, only: %i[index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'

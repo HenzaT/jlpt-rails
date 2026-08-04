@@ -1,7 +1,7 @@
 <%# all jlpt levels page %>
 <section class="home">
   <h1>Choose your JLPT level</h1>
-  <nav class="link-cards">
+  <nav class="cards">
     <% @levels.each do |level| %>
       <%= link_to jlpt_level_path(level) do %>
         <article class="card to-jlpt">
@@ -11,5 +11,5 @@
       <% end %>
     <% end %>
   </nav>
-  <%= link_to "Kanji of the day", kanji_character_path(@random_kanji), class: "gold-button" %>
+  <%= link_to "Kanji of the day", kanji_character_path(@random_kanji), class: "gold button" %>
 </section>
