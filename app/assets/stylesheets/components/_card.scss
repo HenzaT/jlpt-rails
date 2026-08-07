@@ -56,7 +56,11 @@ article.card.kanji {
     @include mixin.flex-row;
     justify-content: space-between;
 
-    .pill.dark { align-self: flex-start; }
+    .card-top-right {
+      @include mixin.flex-col;
+      gap: 1rem;
+      align-self: flex-start;
+    }
   }
 
   .meanings, .kun-readings, .on-readings {

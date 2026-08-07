@@ -1,7 +1,10 @@
 <article class="card kanji">
   <div class="card-top">
     <h1><%= kanji.kanji %></h1>
-    <span class="pill dark">N<%= kanji.jlpt %></span>
+    <div class="card-top-right">
+      <span class="pill dark">N<%= kanji.jlpt %></span>
+      <%= image_tag('star.svg', alt: 'star-icon') if current_user.learnt_kanji?(kanji.id) %>
+    </div>
   </div>
   <h2><%= kanji.heisig_en %></h2>
 

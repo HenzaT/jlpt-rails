@@ -18,4 +18,8 @@ class User < ApplicationRecord
 
     errors.add :password, 'must include at least one lowercase letter, one uppercase letter, one digit, and needs to be minimum 12 characters.'
   end
+
+  def learnt_kanji?(kanji)
+    learnt_kanjis.exists?(kanji_character_id: kanji)
+  end
 end

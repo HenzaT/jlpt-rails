@@ -2,11 +2,11 @@
 <section class="show-kanji" data-controller="show">
   <%= render 'shared/individual_kanji_card', kanji: @kanji %>
   <% if user_signed_in? %>
-    <#% if current_user.learnt_kanjis.exists?(kanji_character: @kanji) %>
-      <%#= button_to "Mark as not learnt", kanji_character_learnt_kanjis_path(@kanji), method: :delete, class: "purple button" %>
-    <#% else %>
-      <%= button_to "learnt!", kanji_character_learnt_kanjis_path(@kanji), method: :post, class: "disabled button" %>
-    <#% end %>
+    <% if current_user.learnt_kanji?(@kanji.id) %>
+      <%= button_to "Mark as not learnt", kanji_character_learnt_kanjis_path(@kanji), method: :delete, class: "purple button" %>
+    <% else %>
+      <%= button_to "I've learnt this kanji!", kanji_character_learnt_kanjis_path(@kanji), method: :post, class: "disabled button" %>
+    <% end %>
   <% end %>
   <%= link_to "back to all kanji", :back, class: "gold button" %>
 </section>

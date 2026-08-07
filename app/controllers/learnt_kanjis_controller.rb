@@ -3,9 +3,10 @@ class LearntKanjisController < ApplicationController
 
   def create
     kanji = KanjiCharacter.find(params[:kanji_character_id])
-    learnt_kanji = LearntKanji.new(params[learn_kanji_params])
-    current_user.learnt_kanjis.find_or_create_by(kanji_character: kanji)
-    redirect_to kanji, notice: 'Marked as learnt!'
+    learnt_kanji = LearntKanji.new(user_id: current_user.id, kanji_character_id: kanji.id, has_learnt: true)
+    if learnt_kanji.save
+      redirect_to kanji, notice: 'Marked as learnt!'
+    end
   end
 
   def destroy
@@ -16,7 +17,7 @@ class LearntKanjisController < ApplicationController
 
   private
 
-  def learn_kanji_params
-    params.require(:learnt_kanji).permit(:kanji_character_id, :user_id)
+  def learnt_kanji_params
+    params.require(:learnt_kanji).permit(:kanji_character_id, :user_id, :has_learnt)
   end
 end
