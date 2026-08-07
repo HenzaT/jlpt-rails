@@ -1,7 +1,7 @@
 <nav id="main-nav">
   <%= link_to 'JLPTrainer', root_path %>
   <% if user_signed_in? %>
-    <%= link_to learnt_kanjis_path do %>
+    <%= link_to dashboard_path do %>
       <%= image_tag('person-circle.svg', alt: 'user icon') %>
     <% end %>
   <% else %>

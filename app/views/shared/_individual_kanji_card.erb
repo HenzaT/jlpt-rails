@@ -14,7 +14,7 @@
       </div>
       <% if kanji.show_rest_meanings.any? %>
         <button type="button" class="pill gold" data-show-target="meaningsButton" data-action="click->show#showMoreMeanings">
-          +<%= kanji.count_of_rest %> more
+          +<%= kanji.count_of_rest_meanings %> more
         </button>
       <% end %>
     </div>
@@ -31,7 +31,7 @@
         <% end %>
       </div>
       <% if kanji.show_rest_kun_readings.any? %>
-        <button type="button" class="pill gold" data-show-target="kunReadingsButton" data-action="click->show#showMoreReadings">
+        <button type="button" class="pill gold" data-show-target="kunReadingsButton" data-action="click->show#showMoreKunReadings">
           +<%= kanji.count_of_rest_kun_readings %> more
         </button>
       <% end %>
@@ -40,9 +40,16 @@
 
   <% if kanji.on_readings.any? %>
     <p>on readings</p>
-    <div class="readings-pills">
-      <% kanji.on_readings.each do |reading| %>
-        <span class="pill light"><%= reading %></span>
+    <div class="on-readings">
+      <div class="readings-pills">
+        <% kanji.show_two_on_readings.each do |reading| %>
+          <span class="pill light"><%= reading %></span>
+        <% end %>
+      </div>
+      <% if kanji.show_rest_on_readings.any? %>
+        <button type="button" class="pill gold" data-show-target="onReadingsButton" data-action="click->show#showMoreOnReadings">
+          +<%= kanji.count_of_rest_on_readings %> more
+        </button>
       <% end %>
     </div>
   <% end %>
@@ -61,6 +68,15 @@
   <h2>More Kun-Readings</h2>
   <div class="kun-reading-words">
     <% kanji.show_rest_kun_readings.each do |reading| %>
+      <h3><%= reading %></h3>
+    <% end %>
+  </div>
+</article>
+
+<article class="card light" data-show-target="onReadingsCard">
+  <h2>More On-Readings</h2>
+  <div class="on-reading-words">
+    <% kanji.show_rest_on_readings.each do |reading| %>
       <h3><%= reading %></h3>
     <% end %>
   </div>

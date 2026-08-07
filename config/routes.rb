@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :kanji_characters, only: %i[index show] do
     resource :learnt_kanjis, only: %i[create destroy]
   end
-  resources :learnt_kanjis, only: %i[index]
+  resource :dashboard, only: %i[show]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'

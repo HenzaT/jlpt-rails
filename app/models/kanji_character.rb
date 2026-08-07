@@ -8,6 +8,7 @@ class KanjiCharacter < ApplicationRecord
   validates :skipped, inclusion: [true, false]
   validates :skipped, exclusion: [nil]
 
+  # methods for meanings
   def show_two_meanings(limit: 2)
     meanings.reject { |meaning| meaning == heisig_en }.first(limit)
   end
@@ -17,11 +18,12 @@ class KanjiCharacter < ApplicationRecord
     kanjis - show_two_meanings
   end
 
-  def count_of_rest
+  def count_of_rest_meanings
     left_over = show_rest_meanings
     left_over.count
   end
 
+  # methods for kun readings
   def show_two_kun_readings(limit: 2)
     kun_readings.first(limit)
   end
@@ -32,6 +34,20 @@ class KanjiCharacter < ApplicationRecord
 
   def count_of_rest_kun_readings
     left_over = show_rest_kun_readings
+    left_over.count
+  end
+
+  # methods for on readings
+  def show_two_on_readings(limit: 2)
+    on_readings.first(limit)
+  end
+
+  def show_rest_on_readings
+    on_readings - show_two_on_readings
+  end
+
+  def count_of_rest_on_readings
+    left_over = show_rest_on_readings
     left_over.count
   end
 end

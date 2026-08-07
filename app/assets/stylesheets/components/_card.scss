@@ -21,6 +21,12 @@
   flex-wrap: wrap;
 }
 
+section.dashboard {
+  .cards {
+    @include mixin.flex-row;
+  }
+}
+
 article.card {
   @include mixin.flex-col;
   gap: 1rem;
@@ -37,6 +43,12 @@ article.card {
 article.to-jlpt {
   @include mixin.flex-row;
   justify-content: space-between;
+
+  .info {
+    @include mixin.flex-col;
+
+    h4 { align-self: flex-end; }
+  }
 }
 
 article.card.kanji {
@@ -47,7 +59,7 @@ article.card.kanji {
     .pill.dark { align-self: flex-start; }
   }
 
-  .meanings, .kun-readings {
+  .meanings, .kun-readings, .on-readings {
     @include mixin.flex-row;
     gap: 1rem;
   }
@@ -68,6 +80,11 @@ article.card.light {
   }
 
   h3 { font-size: 1.5rem; }
+}
+
+article.gold.card {
+  background: vars.$gold;
+  border: 2px solid vars.$gold;
 }
 
 @media (min-width: 768px) {
