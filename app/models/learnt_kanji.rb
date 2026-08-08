@@ -7,4 +7,8 @@ class LearntKanji < ApplicationRecord
   validates :kanji_character_id, :user_id, numericality: { only_integer: true }
   validates :has_learnt, inclusion: [true, false]
   validates :has_learnt, exclusion: [nil]
+
+  def self.last_learnt_kanji
+    order(:created_at).last.kanji_character.kanji
+  end
 end

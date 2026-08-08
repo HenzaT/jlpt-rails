@@ -10,7 +10,6 @@ button { cursor: pointer; }
   text-align: center;
   transition: vars.$transition;
   color: vars.$black;
-
 }
 
 .gold.button {
@@ -35,8 +34,9 @@ button { cursor: pointer; }
   }
 }
 
-.disabled.button {
+.light.button {
   background: vars.$light-purple;
+  border: 2px solid vars.$light-purple;
 }
 
 button.pill {
@@ -52,6 +52,11 @@ button.pill {
     border: 2px solid vars.$dark-gold;
     background: vars.$light-gold;
   }
+}
+
+.button.logout {
+  position: absolute;
+  bottom: 2rem;
 }
 
 @media (min-width: 768px) {

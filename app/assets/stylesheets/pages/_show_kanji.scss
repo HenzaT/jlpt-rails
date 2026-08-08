@@ -2,7 +2,5 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 section.show-kanji {
-  @include mixin.flex-col;
-  align-items: normal;
-  gap: 1rem;
+  @include mixin.section-layout-1rem;
 }

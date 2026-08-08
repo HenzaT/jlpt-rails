@@ -1,0 +1,27 @@
+@use '../abstracts/variables.scss' as vars;
+@use '../abstracts/mixins.scss' as mixin;
+
+section.dashboard {
+  @include mixin.section-layout-1rem;
+
+  section.learnt, section.not-learnt {
+    @include mixin.section-layout-1rem;
+    width: 100%;
+  }
+
+  ul.learnt-groups, ul.not-learnt-groups {
+    @include mixin.flex-row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  ul.learnt-groups {
+    background: vars.$gold;
+  }
+
+  ul.not-learnt-groups {
+    background: vars.$card-light;
+  }
+}

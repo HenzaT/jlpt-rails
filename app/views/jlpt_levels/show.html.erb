@@ -2,7 +2,7 @@
 <section class="jlpt-page">
   <span class="top">
     <%= link_to root_path do %>
-      <%= image_tag('arrow-left-square.svg', alt: 'back arrow button') %>
+      <%= image_tag('arrow-left-square.svg', alt: 'back arrow button', class: 'arrow') %>
     <% end %>
     <h1><%= @kanji_characters.count %> kanji</h1>
   </span>

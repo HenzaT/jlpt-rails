@@ -5,8 +5,8 @@
     <% if current_user.learnt_kanji?(@kanji.id) %>
       <%= button_to "Mark as not learnt", kanji_character_learnt_kanjis_path(@kanji), method: :delete, class: "purple button" %>
     <% else %>
-      <%= button_to "I've learnt this kanji!", kanji_character_learnt_kanjis_path(@kanji), method: :post, class: "disabled button" %>
+      <%= button_to "I've learnt this kanji!", kanji_character_learnt_kanjis_path(@kanji), method: :post, class: "gold button" %>
     <% end %>
   <% end %>
-  <%= link_to "back to all kanji", :back, class: "gold button" %>
+  <%= link_to "back to all kanji", :back, class: "light button" %>
 </section>

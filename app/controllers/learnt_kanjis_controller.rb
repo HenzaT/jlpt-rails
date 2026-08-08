@@ -1,6 +1,11 @@
 class LearntKanjisController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @learnt_kanjis = LearntKanji.where(user_id: current_user.id, has_learnt: true)
+    @grouped_by_jlpt = KanjiCharacter.group(:jlpt).count
+  end
+
   def create
     kanji = KanjiCharacter.find(params[:kanji_character_id])
     learnt_kanji = LearntKanji.new(user_id: current_user.id, kanji_character_id: kanji.id, has_learnt: true)

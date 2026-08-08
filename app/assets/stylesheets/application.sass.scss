@@ -6,11 +6,13 @@
 // components
 @use '../stylesheets/components/button.scss';
 @use '../stylesheets/components/card.scss';
+@use '../stylesheets/components/form.scss';
 @use '../stylesheets/components/img.scss';
 @use '../stylesheets/components/nav.scss';
 @use '../stylesheets/components/pill.scss';
 
 //pages
+@use '../stylesheets/pages/dashboard.scss';
 @use '../stylesheets/pages/home.scss';
 @use '../stylesheets/pages/show_jlpt_levels.scss';
 @use '../stylesheets/pages/show_kanji.scss';

@@ -1,0 +1,18 @@
+<%# user's learnt kanjis %>
+<section class="learnt-kanjis">
+  <span class="top">
+    <%#= link_to root_path do %>
+      <%#= image_tag('arrow-left-square.svg', alt: 'back arrow button', class: 'arrow') %>
+    <%# end %>
+    <h1><%= @learnt_kanjis.count %> kanji learnt</h1>
+  </span>
+  <div class="cards-wrapped">
+    <% @learnt_kanjis.each do |kanji| %>
+      <%= link_to kanji_character_path(kanji.kanji_character.id) do %>
+        <article class="gold card">
+          <h2><%= kanji.kanji_character.kanji %></h2>
+        </article>
+      <% end %>
+    <% end %>
+  </div>
+</section>
