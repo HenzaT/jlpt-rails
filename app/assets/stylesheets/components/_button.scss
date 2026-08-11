@@ -3,6 +3,12 @@
 
 button { cursor: pointer; }
 
+.buttons {
+  @include mixin.flex-row;
+  justify-content: space-between;
+  
+}
+
 .button {
   padding: 1rem;
   border-radius: 15px;

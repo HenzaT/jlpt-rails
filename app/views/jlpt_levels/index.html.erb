@@ -8,11 +8,14 @@
           <h2>JLPT N<%= level %> </h2>
           <div class="info">
             <h3><%= @kanji_character_counts[level] %> kanji</h3>
-            <%# <h4><%= @learnt_kanji.count learnt</h4> %>
+            <h4><%= @learnt_kanji.count %> learnt</h4>
           </div>
         </article>
       <% end %>
     <% end %>
   </nav>
-  <%= link_to "Kanji of the day", kanji_character_path(@random_kanji), class: "gold button" %>
+  <div class="buttons">
+    <%= link_to "Today's kanji", kanji_character_path(@random_kanji), class: "gold button" %>
+    <%= link_to "Test me", kanji_tests_path, class: "purple button" %>
+  </div>
 </section>

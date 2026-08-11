@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resource :dashboard, only: %i[show]
   resources :learnt_kanjis, only: %i[index]
+  resources :kanji_tests, only: %i[index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
