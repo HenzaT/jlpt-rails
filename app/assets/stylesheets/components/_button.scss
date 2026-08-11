@@ -59,6 +59,11 @@ button.pill {
   bottom: 2rem;
 }
 
+.button.danger {
+  background: vars.$danger;
+  border: 2px solid vars.$danger;
+}
+
 @media (min-width: 768px) {
   .link-button {
     align-self: flex-start;

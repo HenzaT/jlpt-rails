@@ -1,9 +1,9 @@
-<article class="<%= current_user.learnt_kanji?(kanji.id) ? 'card kanji learnt' : 'card kanji' %>">
+<article class="<%= user_signed_in? && current_user.learnt_kanji?(kanji.id) ? 'card kanji learnt' : 'card kanji' %>">
   <div class="card-top">
     <h1><%= kanji.kanji %></h1>
     <div class="card-top-right">
       <span class="pill dark">N<%= kanji.jlpt %></span>
-      <%= image_tag('star.svg', alt: 'star-icon', class: 'star') if current_user.learnt_kanji?(kanji.id) %>
+      <%= image_tag('star.svg', alt: 'star-icon', class: 'star') if user_signed_in? && current_user.learnt_kanji?(kanji.id) %>
     </div>
   </div>
   <h2><%= kanji.heisig_en %></h2>

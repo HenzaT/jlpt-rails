@@ -9,7 +9,7 @@
   <div class="cards-wrapped">
     <% @kanji_characters.each do |kanji| %>
       <%= link_to kanji_character_path(kanji) do %>
-        <article class="<%= current_user.learnt_kanji?(kanji.id) ? 'gold card' : 'card' %>">
+        <article class="<%= user_signed_in? && current_user.learnt_kanji?(kanji.id) ? 'gold card' : 'card' %>">
           <h2><%= kanji.kanji %></h2>
         </article>
       <% end %>
