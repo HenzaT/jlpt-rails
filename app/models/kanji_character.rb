@@ -8,6 +8,10 @@ class KanjiCharacter < ApplicationRecord
   validates :skipped, inclusion: [true, false]
   validates :skipped, exclusion: [nil]
 
+  # def group_by_jlpt
+
+  # end
+
   # methods for meanings
   def show_two_meanings(limit: 2)
     meanings.reject { |meaning| meaning == heisig_en }.first(limit)

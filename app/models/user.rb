@@ -5,12 +5,11 @@ class User < ApplicationRecord
   has_many :learnt_kanjis
   has_many :kanji_characters, through: :learnt_kanjis
 
-  validates :firstname, :email, :password, presence: true
+  validates :firstname, :email, presence: true
   validates :firstname, length: { minimum: 2 }
   validates :email, uniqueness: true
   validates :email, 'valid_email_2/email': true
-  validates :password, length: { minimum: 12 }
-  validates :password, not_pwned: { on_error: :valid }
+  validates :password, length: { minimum: 12 }, not_pwned: { on_error: :valid }, presence: true, if: :password_required?
   validate :password_complexity
 
   def password_complexity

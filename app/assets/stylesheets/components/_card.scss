@@ -58,6 +58,8 @@ article.to-jlpt {
 }
 
 article.card.kanji {
+  border: 12px solid vars.$card-light;
+
   .card-top {
     @include mixin.flex-row;
     justify-content: space-between;
@@ -78,6 +80,10 @@ article.card.kanji {
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
   p  { font-size: 1.3rem; }
+}
+
+article.card.kanji.learnt {
+  border: 12px solid vars.$gold;
 }
 
 article.card.light {

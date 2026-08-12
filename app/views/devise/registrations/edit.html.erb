@@ -33,7 +33,7 @@
     <% end %>
 
     <div class="field">
-      <p><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></p>
+      <p>Change <%= f.label :password %></p>
       <p><%= f.password_field :password, autocomplete: "new-password" %></p>
       <% if @minimum_password_length %>
         <p><em><%= @minimum_password_length %> characters minimum</em></p>

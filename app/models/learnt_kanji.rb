@@ -8,6 +8,9 @@ class LearntKanji < ApplicationRecord
   validates :has_learnt, inclusion: [true, false]
   validates :has_learnt, exclusion: [nil]
 
+  # def not_learnt_by_jlpt
+  # end
+
   def self.last_learnt_kanji
     order(:created_at).last.kanji_character.kanji
   end

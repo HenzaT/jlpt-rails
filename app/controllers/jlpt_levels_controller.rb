@@ -7,6 +7,7 @@ class JlptLevelsController < ApplicationController
     all_kanjis = KanjiCharacter.all
     # instance variable for show random kanji button
     @random_kanji = all_kanjis.sample
+    @counts = @learnt_kanji.map { |l| l.kanji_character.jlpt }.tally
   end
 
   # show all kanji in a specific jlpt level
