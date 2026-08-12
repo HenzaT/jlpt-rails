@@ -4,3 +4,9 @@
 section.show-kanji {
   @include mixin.section-layout-1rem;
 }
+
+@media (min-width: 768px) {
+  section.show-kanji {
+    flex-direction: row;
+  }
+}

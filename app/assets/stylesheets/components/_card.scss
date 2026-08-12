@@ -51,6 +51,7 @@ article.to-jlpt {
 
   .info {
     @include mixin.flex-col;
+    gap: 0.5rem;
 
     h4 { align-self: flex-end; }
   }
@@ -102,7 +103,7 @@ article.gold.card {
 }
 
 @media (min-width: 768px) {
-  .link-cards {
+  .cards {
     @include mixin.flex-row;
     justify-content: space-around;
   }
@@ -110,5 +111,11 @@ article.gold.card {
   article.to-jlpt {
     @include mixin.flex-col;
     align-items: normal;
+
+    .info {
+      align-items: normal;
+
+      h4 { align-self: flex-start; }
+    }
   }
 }

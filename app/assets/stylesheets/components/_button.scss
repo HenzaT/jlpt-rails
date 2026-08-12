@@ -3,10 +3,15 @@
 
 button { cursor: pointer; }
 
-.buttons {
+.buttons.row {
   @include mixin.flex-row;
   justify-content: space-between;
-  
+}
+
+.buttons.column {
+  @include mixin.flex-col;
+  align-items: normal;
+  gap: 1rem;
 }
 
 .button {

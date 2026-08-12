@@ -25,3 +25,19 @@ section.dashboard {
     background: vars.$card-light;
   }
 }
+
+@media (min-width: 768px) {
+  section.dashboard {
+    section.learnt, section.not-learnt {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  section.dashboard {
+    section.learnt, section.not-learnt {
+      flex-direction: column;
+    }
+  }
+}
