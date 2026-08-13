@@ -34,7 +34,10 @@
 
     <div class="field">
       <p>Change <%= f.label :password %></p>
-      <p><%= f.password_field :password, autocomplete: "new-password" %></p>
+      <span class="input-container">
+        <%= image_tag('unlock.svg', alt: 'unlocked icon') %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "••••••••••••••••••••" %>
+      </span>
       <% if @minimum_password_length %>
         <p><em><%= @minimum_password_length %> characters minimum</em></p>
       <% end %>
@@ -42,12 +45,18 @@
 
     <div class="field">
       <p><%= f.label :password_confirmation %></p>
-      <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+      <span class="input-container">
+        <%= image_tag('unlock.svg', alt: 'unlocked icon') %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "••••••••••••••••••••" %>
+      </span>
     </div>
 
     <div class="field">
       <p><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></p>
-      <p><%= f.password_field :current_password, autocomplete: "current-password" %></p>
+      <span class="input-container">
+        <%= image_tag('lock.svg', alt: 'lock icon') %>
+        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "••••••••••••••••••••" %>
+      </span>
     </div>
 
     <%= f.submit "Update", class: "gold button" %>

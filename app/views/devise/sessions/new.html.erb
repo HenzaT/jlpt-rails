@@ -7,15 +7,16 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <span class="input-container">
-        <%= image_tag('email.svg', alt: "email envelope icon") %>
+        <%= f.label :email, image_tag('email.svg', alt: "email envelope icon") %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
       </span>
     </div>
 
     <div class="field">
       <span class="input-container">
-        <%= image_tag('lock.svg', alt: "lock icon") %>
+        <%= f.label :password, image_tag('lock.svg', alt: "lock icon") %>
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "••••••••••••••••••••" %>
+        <%= image_tag('eye-slash.svg', alt: 'slashed eye icon', class: 'password-eye') %>
       </span>
     </div>
 
