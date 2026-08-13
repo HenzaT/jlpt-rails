@@ -8,7 +8,9 @@
           <h2>JLPT N<%= level %> </h2>
           <div class="info">
             <h3><%= @kanji_character_counts[level] %> kanji</h3>
-            <h4><%= @counts[level] %> learnt</h4>
+            <% if user_signed_in? %>
+              <h4><%= current_user.learnt_kanji_jlpt_count[level] %> learnt</h4>
+            <% end %>
           </div>
         </article>
       <% end %>

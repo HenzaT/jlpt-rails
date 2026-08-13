@@ -1,22 +1,27 @@
 <%# user dashboard %>
 <section class="dashboard">
-  <p>Hello</p>
-  <h1><%= current_user.firstname %></h1>
+  <h1>Welcome back, <%= current_user.firstname %></h1>
 
   <div class="cards">
     <section class="learnt">
       <%= link_to learnt_kanjis_path do %>
         <article class="gold card">
-          <div class="learnt-count">
-            <p><%= @learnt_count %></p>
-            <p>Kanji learnt</p>
+          <div class="count">
+            <h2>Learnt Kanji</h2>
+            <h3><%= @learnt_count %></h3>
           </div>
-          <h2><%= @most_recent_learnt %></h2>
+          <div class="most-recent">
+            <p>Your last kanji</p>
+            <h3><%= @most_recent_learnt %></h3>
+          </div>
         </article>
       <% end %>
       <ul class="learnt-groups">
         <% @levels.each do |level| %>
-          <li>N<%= level %> - <%= @counts[level] %></li>
+          <li>
+            <p class="underline">N<%= level %></p>
+            <p><%= current_user.learnt_kanji_jlpt_count[level] %></p>
+          </li>
         <% end %>
       </ul>
     </section>
@@ -24,17 +29,22 @@
     <section class="not-learnt">
       <%= link_to root_path do %>
         <article class="card">
-          <p><%= @not_learnt_count %></p>
-          <p>Kanji to learn</p>
+          <div class="count">
+            <h2>Kanji left to learn</h2>
+            <h3><%= @not_learnt_count %></h3>
+          </div>
         </article>
       <% end %>
       <ul class="not-learnt-groups">
         <% @levels.each do |level| %>
-          <li>N<%= level %> - <%= @kanji_character_counts[level] - @counts[level] %></li>
+          <li>
+            <p class="underline">N<%= level %></p>
+            <p><%= @kanji_character_counts[level] - current_user.learnt_kanji_jlpt_count[level] %></p>
+          </li>
         <% end %>
       </ul>
     </section>
     <%= link_to "Edit user details", edit_user_registration_path %>
   </div>
-  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "purple button logout" %>
+  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "danger button logout" %>
 </section>

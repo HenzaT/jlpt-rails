@@ -17,6 +17,11 @@ section.dashboard {
     border-radius: 15px;
   }
 
+  .count {
+    @include mixin.flex-col;
+    align-items: normal;
+  }
+
   ul.learnt-groups {
     background: vars.$gold;
   }

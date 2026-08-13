@@ -6,6 +6,5 @@ class DashboardsController < ApplicationController
     @levels = [5, 4, 3, 2, 1]
     @kanji_character_counts = KanjiCharacter.group(:jlpt).count
     @most_recent_learnt = LearntKanji.last_learnt_kanji
-    @counts = learnt_kanjis.map { |l| l.kanji_character.jlpt }.tally
   end
 end

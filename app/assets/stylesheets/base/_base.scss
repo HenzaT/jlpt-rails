@@ -28,3 +28,8 @@ hr.card-separator {
   border: none;
   background: vars.$white;
 }
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}

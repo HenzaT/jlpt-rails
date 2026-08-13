@@ -21,10 +21,27 @@
   flex-wrap: wrap;
 }
 
+// dashboard specific cards
 section.dashboard {
   .cards {
     @include mixin.flex-col;
     gap: 3rem;
+
+    article.card {
+      flex-direction: row;
+      justify-content: space-between;
+
+      h3 {
+        color: vars.$black;
+        font-size: 4rem;
+      }
+
+      .most-recent {
+        @include mixin.flex-col;
+
+        h3 { align-self: flex-end; }
+      }
+    }
   }
 }
 

@@ -6,6 +6,19 @@
     <%= f.hidden_field :reset_password_token %>
 
     <div class="field">
+      <p>Change <%= f.label :password %></p>
+      <p><%= f.password_field :password, autocomplete: "new-password" %></p>
+      <% if @minimum_password_length %>
+        <p><em><%= @minimum_password_length %> characters minimum</em></p>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <p><%= f.label :password_confirmation %></p>
+      <p><%= f.password_field :password_confirmation, autocomplete: "new-password" %></p>
+    </div>
+
+    <div class="field">
       <p><%= f.label :password, "New password" %></p>
       <% if @minimum_password_length %>
         <p><em>(<%= @minimum_password_length %> characters minimum)</em></p>

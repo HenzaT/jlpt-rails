@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def learnt_kanji?(kanji)
     learnt_kanjis.exists?(kanji_character_id: kanji)
   end
+
+  def learnt_kanji_jlpt_count
+    learnt_kanjis.joins(:kanji_character).group(:jlpt).count
+  end
 end

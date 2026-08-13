@@ -47,7 +47,7 @@ button { cursor: pointer; }
 
 .light.button {
   background: vars.$light-purple;
-  border: 2px solid vars.$light-purple;
+  border: 2px solid vars.$dark-purple;
 }
 
 button.pill {
@@ -66,8 +66,7 @@ button.pill {
 }
 
 .button.logout {
-  position: absolute;
-  bottom: 2rem;
+  align-self: flex-start;
 }
 
 .button.danger {
