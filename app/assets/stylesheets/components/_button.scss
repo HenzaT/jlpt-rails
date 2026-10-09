@@ -74,8 +74,8 @@ button.pill {
   border: 2px solid vars.$danger;
 }
 
-@media (min-width: 768px) {
-  .link-button {
-    align-self: flex-start;
-  }
-}
+// @include media(tablet) {
+//   .link-button {
+//     align-self: flex-start;
+//   }
+// }

@@ -6,6 +6,11 @@
     <% end %>
     <h1><%= @kanji_characters.count %> kanji</h1>
   </span>
+  <select name="kanji" id="kanji">
+    <option value="all">Show All</option>
+    <option value="learnt">Learnt</option>
+    <option value="not-leartn">Not Learnt</option>
+  </select>
   <div class="cards-wrapped">
     <% @kanji_characters.each do |kanji| %>
       <%= link_to kanji_character_path(kanji) do %>

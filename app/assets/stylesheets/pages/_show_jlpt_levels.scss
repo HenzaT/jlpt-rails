@@ -2,14 +2,23 @@
 @use '../abstracts/mixins.scss' as mixin;
 
 section.jlpt-page {
+  @include mixin.section-layout-1rem;
+
   .top {
     @include mixin.flex-row;
     justify-content: space-between;
     gap: 1rem;
-    padding-bottom: 1rem;
 
     a {
       @include mixin.flex-row;
     }
+  }
+
+  select {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid vars.$dark-purple;
+    padding: 0.5rem 1rem;
   }
 }

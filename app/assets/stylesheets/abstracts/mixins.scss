@@ -1,5 +1,17 @@
 @use 'variables.scss' as vars;
 
+// responsive breakpoints
+@mixin media($query) {
+  @if $query == tablet {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $query == laptop {
+    @media (min-width: 1024px) { @content; }
+  }
+  @else if $query == laptopAndUp {
+    @media (min-width: 1440px) { @content; }
+  }
+}
 
 @mixin flex-row {
   display: flex;
